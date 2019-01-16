@@ -1,14 +1,11 @@
-﻿using System;
-
-namespace NetCoreConsoleApp
+﻿namespace NetCoreConsoleApp
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Press ENTER to quit.");
-            Console.ReadLine();
+            var app = new App(new ConsoleInputPort(), new ConsoleOutputPort());
+            app.Run();
         }
     }
 }
