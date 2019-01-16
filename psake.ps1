@@ -21,4 +21,9 @@ Task Test -Depends Build {
 	Exec { dotnet test -c $buildConfig -v $dotnetVerbosity $testProject}
 } 
 
-Task Default -Depends Test
+Task Publish -Depends Build {
+	Exec { dotnet publish -c $buildConfig -v $dotnetVerbosity $project}
+} 
+
+
+Task Default -Depends Publish
